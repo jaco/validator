@@ -20,9 +20,9 @@ class NumericMin extends \Ayeo\Validator\Constraint\AbstractValidator
 
 	public function validate($fieldName, $form)
 	{
-        $value = $this->getFieldValue($form, $fieldName);
+		$value = $this->getFieldValue($form, $fieldName);
 
-		if (!is_numeric($value))
+		if (is_numeric($value) == false)
 		{
 			$this->error = $this->buildMessage($fieldName, 'must_be_numeric');
 		}
